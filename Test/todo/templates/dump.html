@@ -1,0 +1,40 @@
+<!-- dump.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Response Dump</title>
+</head>
+<body>
+    <h1>Response Dump</h1>
+
+    {% if evaluation_dict %}
+    <h2>Evaluation Results:</h2>
+    <ul>
+        {% for response_id, is_correct in evaluation_dict.items %}
+        <li>Response ID: {{ response_id }} - Correct: {{ is_correct }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if response_dict %}
+    <h2>Response Details:</h2>
+    <ul>
+        {% for question_id, selected_option in response_dict.items %}
+        <li>Question ID: {{ question_id }} - Selected Option: {{ selected_option }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if questions %}
+    <h2>Questions:</h2>
+    <ul>
+        {% for question in questions %}
+        <li>Question: {{ question.question }}</li>
+        <li>Correct Answer: {{ question.answer }}</li>
+        <hr>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
