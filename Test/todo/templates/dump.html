@@ -1,40 +1,68 @@
-<!-- dump.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+            <nav>
+            <h2 class="DashStudentName">Student Information</h2>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Name:</strong> Student Name</li>
+                <li class="list-group-item"><strong>Branch:</strong> Computer Science</li>
+                <li class="list-group-item"><strong>Enrollment Number:</strong> ABC123456</li>
+                <li class="list-group-item"><strong>Email:</strong> student@example.com</li>
+                <li class="list-group-item"><strong>Phone Number:</strong> (123) 456-7890</li>
+            </ul>
+        </nav>
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Test Name</th>
+                        <th>Date</th>
+                        <th>Duration</th>
+                        <th>Total Responses</th>
+                        <th>Unanswered Responses</th>
+                        <th>Correct Answers</th>
+                        <th>Incorrect Answers</th>
+                        <th>Marks</th>
+                        <th>Ranking </th>
+                        <th>Remarks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Test 1</th>
+                        <th>Date 1</th>
+                        <th>100</th>
+                        <th>10</th>
+                        <th>2</th>
+                        <th>6</th>
+                        <th>2</th>
+                        <th>6</th>
+                        <th>4 </th>
+                        <th>average</th>
+                    </tr>
+                    <tr>
+                        <th>Test 2</th>
+                        <th>Date 2</th>
+                        <th>300</th>
+                        <th>10</th>
+                        <th>2</th>
+                        <th>6</th>
+                        <th>2</th>
+                        <th>6</th>
+                        <th>4 </th>
+                        <th>average</th>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+    </div>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Response Dump</title>
-</head>
-<body>
-    <h1>Response Dump</h1>
-
-    {% if evaluation_dict %}
-    <h2>Evaluation Results:</h2>
-    <ul>
-        {% for response_id, is_correct in evaluation_dict.items %}
-        <li>Response ID: {{ response_id }} - Correct: {{ is_correct }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-
-    {% if response_dict %}
-    <h2>Response Details:</h2>
-    <ul>
-        {% for question_id, selected_option in response_dict.items %}
-        <li>Question ID: {{ question_id }} - Selected Option: {{ selected_option }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-
-    {% if questions %}
-    <h2>Questions:</h2>
-    <ul>
-        {% for question in questions %}
-        <li>Question: {{ question.question }}</li>
-        <li>Correct Answer: {{ question.answer }}</li>
-        <hr>
-        {% endfor %}
-    </ul>
-    {% endif %}
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
 </html>

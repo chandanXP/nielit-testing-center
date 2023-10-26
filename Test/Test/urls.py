@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from todo.views import *
 
 urlpatterns = [
@@ -8,4 +8,6 @@ urlpatterns = [
     path('running-test/', running_test, name='running_test'),
     path('test_page/<str:subject_code>/', fetch_subject_detail, name='top_10_questions'),
     path('submit-test/', submit_test, name='submit_test'),
+    path('auth/', include('authentication.urls')),
+
 ]

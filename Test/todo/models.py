@@ -40,3 +40,4 @@ class Test(models.Model):
 class Response(models.Model):
     question_id = models.IntegerField(default=-1)  # Set a default value like -1 for cases with no specific question
     selected_option = models.CharField(max_length=255)
+
